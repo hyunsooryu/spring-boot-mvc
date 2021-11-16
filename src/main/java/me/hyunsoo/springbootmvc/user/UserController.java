@@ -65,16 +65,38 @@ import java.util.Map;
  *  -> WebMvcConfigurer -> addResourceHandlers 로 커스터 마이징도 가능 함
  *
  *
- *  5부. 웹Jar
+ *  5부. 웹 Jar
  *
  *  WebJar -> jquery. vue.js 등을 jar로 추가할 수 잇습니다.
  *  /webjars/**
  *  버전 생략하고 사용하려면 webjars-locator-core 의존성을 추가해야 합니다.
  *
  *
+ *  6부. index Page & Favicon ?
+ *
+ *  웰컴 페이지
+ *  index.html 찾아보고 있으면 제공
+ *  index.template 찾아보고 있으면 제공
+ *  둘 다 없다면, 에러 페이지.
+ *
+ *  파비콘
+ *  favicon.ico
  *
  *
+ *  7부. Thymeleaf ?
+ *  스프링부트가 자동 설정을 지원하는 템플릿 엔진
+ *  FreeMarker, Groovy, Thymeleaf, Mustache
  *
+ *  JSP를 권장하지 않는 이유
+*   JAR 패키징 할 때는 동작하지 않고, WAR 패키징을 해야 하기 떄문입니다.
+ *  또한 Undertow는 JSP를 아예 지원하지도 않습니다.
+ *
+ *  Thymeleaf를 사용하려면 -> spring-boot-starter-thymeleaf 라는 의존성을 추가하여,
+ *  ClassPath에서 찾을 수 있게 해줘야 합니다.
+ *
+ *  8부. HtmlUnit ?
+ *
+ *  HTML 템플릿 뷰 테스트를 보다 전문적으로 할 수 있습니다.
  *
  *
  *
