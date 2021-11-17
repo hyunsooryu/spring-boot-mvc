@@ -98,6 +98,28 @@ import java.util.Map;
  *
  *  HTML 템플릿 뷰 테스트를 보다 전문적으로 할 수 있습니다.
  *
+ *  9부. ExceptionHandler?
+ *
+ *  스프링 @MVC 예외 처리 방법
+ * @ControllerAdvice
+ * @ExchangepHandler
+ *
+ * 스프링 부트가 제공하는 기본 예외 처리기
+ * BasicErrorController - AutoConfigurer로 제공 됨.
+ * HTML, JSON 응답 지원 - curl http://localhost:8080 -> JSON 리턴 해 줌
+ *
+ * 커스터 마이징 방법
+ * ErrorController 구현 -> BasicErrorController 를 상속받아서 만들어도 좋습니다.
+ *
+ * 커스텀 에러 페이지
+ *
+ * 상태 코드 값에 따라 에러페이지 보여주기
+ *
+ * src/main/resources/static|templae/error/ ~
+ *
+ * 404.html
+ * 5xx.html
+ * ErrorViewResolver 구현
  *
  *
  *
@@ -119,7 +141,7 @@ public class UserController {
 
     //final MappingJackson2XmlHttpMessageConverter mappingJackson2XmlHttpMessageConverter;
 
-    @GetMapping("/hello")
+    @GetMapping("/hello2")
     public String hello(){
         return "hello";
     }
